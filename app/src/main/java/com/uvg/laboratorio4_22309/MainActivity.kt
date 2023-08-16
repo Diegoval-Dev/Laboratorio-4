@@ -15,18 +15,23 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import com.uvg.laboratorio4_22309.ui.theme.Laboratorio4Theme
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.graphics.Color
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,17 +41,35 @@ class MainActivity : ComponentActivity() {
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
+                    color = Color.White
                 ) {
                     Column(){
-                        MainTitel("Android",
-                            Modifier
+                        MainTitel(
+                            title = "Campus central",
+                            modifier = Modifier
                                 .fillMaxWidth()
-                                .padding(20.dp), TextAlign.Center, 20.sp)
-                        Banner(id = R.drawable.banner,
-                            Modifier
+                                .padding(20.dp),
+                            textAlign = TextAlign.Center,
+                            fontSize = 20.sp,
+                            color= Color.Black
+                        )
+                        Banner(
+                            id = R.drawable.banner,
+                            modifier = Modifier
                                 .fillMaxWidth()
-                                .height(150.dp),ContentScale.FillWidth)
+                                .height(150.dp),
+                            contentScale = ContentScale.FillWidth
+
+                        )
+                        SecondaryTitle(
+                            secondaryTitle = "DESTACADOS",
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(top = 20.dp, start = 10.dp),
+                            textAlign = TextAlign.Start,
+                            color = Color.Gray,
+                            fontSize = 15.sp
+                        )
                     }
                 }
             }
@@ -55,12 +78,13 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun MainTitel(title: String, modifier: Modifier = Modifier, textAlign: TextAlign, fontSize: TextUnit) {
+fun MainTitel(title: String, modifier: Modifier = Modifier, textAlign: TextAlign, fontSize: TextUnit, color: Color) {
     Text(
         text = title,
         modifier = modifier,
         textAlign = textAlign,
-        fontSize = fontSize
+        fontSize = fontSize,
+        color = color
     )
 }
 @Composable
@@ -74,26 +98,156 @@ fun Banner(@DrawableRes id: Int, modifier: Modifier, contentScale: ContentScale)
         )
 }
 @Composable
-fun SecondaryTitle(secondaryTitle: String){
+fun SecondaryTitle(secondaryTitle: String, modifier: Modifier, textAlign: TextAlign, color: Color, fontSize: TextUnit){
     Text(
-        text = secondaryTitle
+        text = secondaryTitle,
+        modifier = modifier,
+        textAlign = textAlign,
+        color = color,
+        fontSize = fontSize,
     )
-
 }
-
+@Composable
+fun Card(modifierColumn: Modifier,@DrawableRes id: Int, modifierImg: Modifier, contentScale: ContentScale, modifierTextBox: Modifier, text: String, modifierText: Modifier, color: Color, fontSize: TextUnit){
+    val image = painterResource(id)
+    Column(
+        modifier = modifierColumn
+    ){
+        Image(
+            painter = image,
+            contentDescription = stringResource(R.string.imagen_de_la_uvg),
+            modifier = modifierImg,
+            contentScale = contentScale
+        )
+        Box(
+            modifier = modifierTextBox
+        ){
+            Text(
+                text = text,
+                modifier = modifierText,
+                color = color,
+                fontSize = fontSize,
+            )
+        }
+    }
+}
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
     Laboratorio4Theme{
         Column(){
-            MainTitel("Campus central",
-                Modifier
+            MainTitel(
+                title = "Campus central",
+                modifier = Modifier
                     .fillMaxWidth()
-                    .padding(20.dp), TextAlign.Center, 20.sp)
-            Banner(id = R.drawable.banner,
-                Modifier
+                    .padding(20.dp),
+                textAlign = TextAlign.Center,
+                fontSize = 20.sp,
+                color= Color.Black
+            )
+            Banner(
+                id = R.drawable.banner,
+                modifier = Modifier
                     .fillMaxWidth()
-                    .height(150.dp),ContentScale.FillWidth)
+                    .height(150.dp),
+                contentScale = ContentScale.FillWidth
+
+            )
+            SecondaryTitle(
+                secondaryTitle = "DESTACADOS",
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(top = 20.dp, start = 10.dp),
+                textAlign = TextAlign.Start,
+                color = Color.Gray,
+                fontSize = 15.sp
+            )
+            Row(
+                horizontalArrangement = Arrangement.Center,
+                modifier = Modifier.fillMaxWidth().padding(2.dp)
+            ){
+                Card(
+                    modifierColumn = Modifier
+                        .weight(1f)
+                        .padding(5.dp),
+                    id = R.drawable.img1,
+                    modifierImg = Modifier
+                        .fillMaxWidth(),
+                    contentScale = ContentScale.Crop,
+                    modifierTextBox = Modifier
+                        .background(Color.Green)
+                        .fillMaxWidth(),
+                    text = "Service Now",
+                    modifierText = Modifier
+                        .weight(1f),
+                    color = Color.White,
+                    fontSize = 15.sp
+                )
+                Card(
+                    modifierColumn = Modifier
+                        .padding(5.dp).weight(1f),
+                    id = R.drawable.img1,
+                    modifierImg = Modifier
+                        .fillMaxWidth(),
+                    contentScale = ContentScale.Crop,
+                    modifierTextBox = Modifier
+                        .background(Color.Green)
+                        .fillMaxWidth(),
+                    text = "Service Now",
+                    modifierText = Modifier
+                        .weight(1f),
+                    color = Color.White,
+                    fontSize = 15.sp
+                )
+            }
+            SecondaryTitle(
+                secondaryTitle = "DESTACADOS",
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(top = 20.dp, start = 10.dp),
+                textAlign = TextAlign.Start,
+                color = Color.Gray,
+                fontSize = 15.sp
+            )
+            Row(
+                horizontalArrangement = Arrangement.Center,
+                modifier = Modifier.fillMaxWidth()
+            ){
+                Card(
+                    modifierColumn = Modifier
+                        .weight(1f)
+                        .padding(5.dp),
+                    id = R.drawable.img1,
+                    modifierImg = Modifier
+                        .fillMaxWidth(),
+                    contentScale = ContentScale.Crop,
+                    modifierTextBox = Modifier
+                        .background(Color.Green)
+                        .fillMaxWidth(),
+                    text = "Service Now",
+                    modifierText = Modifier
+                        .weight(1f),
+                    color = Color.White,
+                    fontSize = 15.sp
+                )
+                Card(
+                    modifierColumn = Modifier
+                        .weight(1f)
+                        .padding(5.dp),
+                    id = R.drawable.img1,
+                    modifierImg = Modifier
+                        .fillMaxWidth(),
+                    contentScale = ContentScale.Crop,
+                    modifierTextBox = Modifier
+                        .background(Color.Green)
+                        .fillMaxWidth(),
+                    text = "Service Now",
+                    modifierText = Modifier
+                        .weight(1f),
+                    color = Color.White,
+                    fontSize = 15.sp
+                )
+            }
         }
     }
 }
