@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">Laboratorio4</string>
+    <string name="app_name">Laboratorio4 Diego Valenzuela</string>
+    <string name="baner_uvg">Baner UVG</string>
+    <string name="campus_central">Campus Central</string>
 </resources>
