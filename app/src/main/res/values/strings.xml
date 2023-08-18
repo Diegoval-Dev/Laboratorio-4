@@ -3,4 +3,23 @@
     <string name="baner_uvg">Baner UVG</string>
     <string name="campus_central">Campus Central</string>
     <string name="imagen_de_la_uvg">Imagen de la UVG</string>
+    <string name="service_now">Service Now</string>
+    <string name="actualidad_uvg">Actualidad UVG</string>
+    <string name="directorio_de_servicios_estudiantiles">Directorio de Servicios\nEstudiantiles</string>
+    <string name="portal_web_bibliotecas_uvg">Portal Web Bibliotecas UVG</string>
+    <string name="title_activity_my_profile">MyProfile</string>
+    <string name="my_profile">My Profile</string>
+    <string name="configuracion">Configuracion</string>
+    <string name="foto_de_perfil">Foto de perfil</string>
+    <string name="icono_de_mi_campus">Icono de Mi Campus</string>
+    <string name="my_campus">My Campus</string>
+    <string name="campus_centralS">Campus Central</string>
+    <string name="icono_de_amigos">Icono de amigos</string>
+    <string name="my_friends">My Friends</string>
+    <string name="icono_calendario">Icono calendario</string>
+    <string name="my_calendar">My Calendar</string>
+    <string name="icono_cursos">Icono Cursos</string>
+    <string name="my_courses">My Courses</string>
+    <string name="icono_de_mis_notas">Icono de mis notas</string>
+    <string name="my_grades">My Grades</string>
 </resources>

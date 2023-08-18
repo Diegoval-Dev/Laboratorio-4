@@ -1,4 +1,4 @@
-package com.uvg.laboratorio4_22309.ui.theme
+package com.uvg.laboratorio4_22309.ui.theme.ui.theme
 
 import android.app.Activity
 import android.os.Build
