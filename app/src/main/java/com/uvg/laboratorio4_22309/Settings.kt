@@ -177,7 +177,8 @@ fun SecondNavBar(title: String, @DrawableRes id: Int) {
                     .align(Alignment.CenterStart)
                     .height(35.dp)
                     .width(35.dp)
-                    .padding(start = 10.dp),
+                    .padding(start = 10.dp)
+                    .clickable {  },
                 colorFilter = ColorFilter.tint(Color.Black)
             )
         }

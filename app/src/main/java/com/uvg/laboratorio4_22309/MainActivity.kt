@@ -13,6 +13,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -69,7 +70,8 @@ class MainActivity : ComponentActivity() {
                             Card(
                                 modifier = Modifier
                                     .weight(0.7f)
-                                    .padding(10.dp),
+                                    .padding(10.dp)
+                                    .clickable {  },
                                 id = R.drawable.img1,
                                 text = stringResource(R.string.service_now),
                                 modifierText = Modifier
@@ -82,7 +84,8 @@ class MainActivity : ComponentActivity() {
                             Card(
                                 modifier = Modifier
                                     .weight(0.7f)
-                                    .padding(10.dp),
+                                    .padding(10.dp)
+                                    .clickable {  },
                                 id = R.drawable.img2,
                                 text = stringResource(R.string.actualidad_uvg),
                                 modifierText = Modifier
@@ -104,7 +107,8 @@ class MainActivity : ComponentActivity() {
                             Card(
                                 modifier = Modifier
                                     .weight(0.7f)
-                                    .padding(10.dp),
+                                    .padding(10.dp)
+                                    .clickable {  },
                                 id = R.drawable.img3,
                                 text = stringResource(R.string.directorio_de_servicios_estudiantiles),
                                 modifierText = Modifier
@@ -117,7 +121,8 @@ class MainActivity : ComponentActivity() {
                             Card(
                                 modifier = Modifier
                                     .weight(0.7f)
-                                    .padding(10.dp),
+                                    .padding(10.dp)
+                                    .clickable {  },
                                 id = R.drawable.img4,
                                 text = stringResource(R.string.portal_web_bibliotecas_uvg),
                                 modifierText = Modifier
