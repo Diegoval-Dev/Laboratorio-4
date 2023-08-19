@@ -27,6 +27,7 @@ import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
 import com.uvg.laboratorio4_22309.ui.theme.ui.theme.Laboratorio4Theme
 
 class MainActivity : ComponentActivity() {
@@ -57,13 +58,12 @@ class MainActivity : ComponentActivity() {
                             alphaNumber = 1f
                         )
                         SecondaryTitle(
-                            secondaryTitle = "DESTACADOS",
+                            secondaryTitle = "DESTACADOS"
                         )
                         Row(
                             horizontalArrangement = Arrangement.Center,
                             modifier = Modifier
                                 .fillMaxWidth()
-                                .weight(2f)
                                 .padding(2.dp)
                         ){
                             Card(
@@ -73,8 +73,11 @@ class MainActivity : ComponentActivity() {
                                 id = R.drawable.img1,
                                 text = stringResource(R.string.service_now),
                                 modifierText = Modifier
-                                    .padding(10.dp)
+                                    .padding(5.dp)
                                     .weight(1f),
+                                modifierBox = Modifier
+                                    .background(Color.Green)
+                                    .fillMaxWidth()
                             )
                             Card(
                                 modifier = Modifier
@@ -83,13 +86,17 @@ class MainActivity : ComponentActivity() {
                                 id = R.drawable.img2,
                                 text = stringResource(R.string.actualidad_uvg),
                                 modifierText = Modifier
-                                    .padding(10.dp)
+                                    .padding(5.dp)
                                     .weight(1f),
+                                modifierBox = Modifier
+                                    .background(Color.Gray)
+                                    .fillMaxWidth()
                             )
                         }
                         SecondaryTitle(
                             secondaryTitle = "SERVICIOS Y RECURSOS",
-                        )
+
+                            )
                         Row(
                             horizontalArrangement = Arrangement.Center,
                             modifier = Modifier.fillMaxWidth()
@@ -101,8 +108,11 @@ class MainActivity : ComponentActivity() {
                                 id = R.drawable.img3,
                                 text = stringResource(R.string.directorio_de_servicios_estudiantiles),
                                 modifierText = Modifier
-                                    .padding(10.dp)
+                                    .padding(5.dp)
                                     .weight(1f),
+                                modifierBox = Modifier
+                                    .background(Color.Green)
+                                    .fillMaxWidth()
                             )
                             Card(
                                 modifier = Modifier
@@ -111,8 +121,11 @@ class MainActivity : ComponentActivity() {
                                 id = R.drawable.img4,
                                 text = stringResource(R.string.portal_web_bibliotecas_uvg),
                                 modifierText = Modifier
-                                    .padding(10.dp)
+                                    .padding(5.dp)
                                     .weight(1f),
+                                modifierBox = Modifier
+                                    .background(Color.Gray)
+                                    .fillMaxWidth()
                             )
                         }
                     }
@@ -129,7 +142,8 @@ fun MainTitel(title: String, modifier: Modifier = Modifier, textAlign: TextAlign
         modifier = modifier,
         textAlign = textAlign,
         fontSize = fontSize,
-        color = color
+        color = color,
+        fontWeight = FontWeight.ExtraBold
     )
 }
 @Composable
@@ -149,14 +163,14 @@ fun SecondaryTitle(secondaryTitle: String){
         text = secondaryTitle,
         modifier = Modifier
             .fillMaxWidth()
-            .padding(top = 20.dp, start = 10.dp),
+            .padding(top = 10.dp, start = 10.dp),
         textAlign = TextAlign.Start,
         color = Color.Gray,
         fontSize = 15.sp
     )
 }
 @Composable
-fun Card(modifier: Modifier, @DrawableRes id: Int, text: String, modifierText: Modifier){
+fun Card(modifier: Modifier, @DrawableRes id: Int, text: String, modifierText: Modifier, modifierBox: Modifier){
     val image = painterResource(id)
     Column(
         modifier = modifier
@@ -170,9 +184,7 @@ fun Card(modifier: Modifier, @DrawableRes id: Int, text: String, modifierText: M
             contentScale = ContentScale.Crop
         )
         Box(
-            modifier = Modifier
-                .background(Color.Green)
-                .fillMaxWidth()
+            modifier = modifierBox
         ){
             Text(
                 text = text,
@@ -221,7 +233,10 @@ fun GreetingPreview() {
                     text = stringResource(R.string.service_now),
                     modifierText = Modifier
                         .padding(start = 10.dp)
-                        .weight(1f)
+                        .weight(1f),
+                    modifierBox = Modifier
+                        .background(Color.Green)
+                        .fillMaxWidth()
                 )
                 Card(
                     modifier = Modifier
@@ -232,6 +247,9 @@ fun GreetingPreview() {
                     modifierText = Modifier
                         .padding(start = 10.dp)
                         .weight(1f),
+                    modifierBox = Modifier
+                        .background(Color.Green)
+                        .fillMaxWidth()
                 )
             }
             SecondaryTitle(
@@ -251,6 +269,9 @@ fun GreetingPreview() {
                     modifierText = Modifier
                         .padding(start = 10.dp)
                         .weight(1f),
+                    modifierBox = Modifier
+                        .background(Color.Green)
+                        .fillMaxWidth()
                 )
                 Card(
                     modifier = Modifier
@@ -261,6 +282,9 @@ fun GreetingPreview() {
                     modifierText = Modifier
                         .padding(start = 10.dp)
                         .weight(1f),
+                    modifierBox = Modifier
+                        .background(Color.Green)
+                        .fillMaxWidth()
                 )
             }
         }
