@@ -54,4 +54,6 @@
     <string name="clinica_uvg">Clinica UVG</string>
     <string name="info_clinic">La clinica UVG, presta los siguientes servicios:\n\n° Atencion a Emergencias\n° Atencion Primaria a Enfermedades Comunes\n° Plan Educacional sobre Enfermedades\n\nHorario de Atencion: 7:00 a.m. a 8:30 p.m. Campus Central Edificio F 119-120</string>
     <string name="call_2507_1500_ex_21312">Call 2507-1500 ex 21312</string>
+    <string name="title_activity_main_nav_bar">MainNavBar</string>
+    <string name="icono_inicio">Icono inicio</string>
 </resources>
