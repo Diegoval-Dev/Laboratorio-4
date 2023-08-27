@@ -56,4 +56,5 @@
     <string name="call_2507_1500_ex_21312">Call 2507-1500 ex 21312</string>
     <string name="title_activity_main_nav_bar">MainNavBar</string>
     <string name="icono_inicio">Icono inicio</string>
+    <string name="settings1">Settings</string>
 </resources>
